@@ -20,7 +20,8 @@ def ulam_matrix(n: int):  # n must be odd
         if k > 3: k = 0
         if k % 2 == 0:
             counter += 1
-    for row in t: print(row)
+    for row in t:
+        print(row)
 
 
 ulam_matrix(3)
