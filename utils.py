@@ -3,6 +3,16 @@
 import math
 
 
+def num_len(n: int):
+    if n == 0:
+        return 1
+    x = 0
+    while n > 0:
+        x += 1
+        n //= 10
+    return x
+
+
 def digits_number(n: int):
     if n == 0: return 1
     digits_counter = 0
@@ -48,5 +58,12 @@ def gcf(a: int, b: int):
     return a
 
 
-if __name__ == "__main__":
-    fraction(3, 5)
+def permutation(arr: list, pos=0):
+    if pos == len(arr):
+        print(arr)
+    else:
+        for i in range(pos,len(arr)):
+            arr[i], arr[pos] = arr[pos], arr[i]
+            permutation(arr, pos + 1)
+            arr[i], arr[pos] = arr[pos], arr[i]
+
